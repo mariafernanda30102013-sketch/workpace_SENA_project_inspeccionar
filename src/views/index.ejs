@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>
+        <%= etiqueta %>
+    </title>
+    <%- include('partials/head') %>
+</head>
+
+<body>
+    <%- include('partials/navigation') %>
+
+        <main class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+
+            <div class="card bg-white text-dark text-center">
+                <main class="container mt-5">
+                    <h1>Bienvenidos al Menu Principal</h1>
+                    <p> Has iniciado sesion correctamente</p>
+                    <a href="/login" class="btn btn-danger">Cerrar session</a>
+                </main>
+            </div>
+        </main>
+        <%- include('partials/footer') %>
+</body>
+
+</html>
