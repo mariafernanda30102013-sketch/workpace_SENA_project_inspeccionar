@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nueva inspección</title>
+
+    <%- include('partials/head') %>
+</head>
+
+<body>
+
+    <%- include('partials/navegation') %>
+
+        <main class="container mt-5">
+
+            <div class="text-center mb-4">
+                <h1>Nueva inspección</h1>
+                <p class="lead">
+                    Información de la inspección
+                </p>
+            </div>
+
+            <form action="/registrar-inspeccion" method="POST">
+
+                <!-- FECHA Y HORAS -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">1. Información de la visita</h3>
+
+                    <div class="row">
+
+                        <div class="col-md-4 mb-3">
+                            <label for="fecha" class="form-label">
+                                Fecha de inspección
+                            </label>
+
+                            <input type="date" id="fecha" name="fecha" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="horaInicio" class="form-label">
+                                Hora de inicio
+                            </label>
+
+                            <input type="time" id="horaInicio" name="horaInicio" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="horaFinalizacion" class="form-label">
+                                Hora de finalización
+                            </label>
+
+                            <input type="time" id="horaFinalizacion" name="horaFinalizacion" class="form-control">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TIPO DE INSPECCIÓN -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">2. Tipo de inspección</h3>
+
+                    <div class="mb-3">
+
+                        <label for="tipoInspeccion" class="form-label">
+                            Tipo de revisión
+                        </label>
+
+                        <select id="tipoInspeccion" name="tipoInspeccion" class="form-select" required>
+
+                            <option value="">
+                                Seleccione una opción
+                            </option>
+
+                            <option value="periodica">
+                                Periódica
+                            </option>
+
+                            <option value="previa">
+                                Previa
+                            </option>
+
+                            <option value="nueva">
+                                Nueva
+                            </option>
+
+                            <option value="reforma">
+                                Reforma
+                            </option>
+
+                            <option value="solicitud_usuario">
+                                Solicitud del usuario
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORME -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">3. Información del informe</h3>
+
+                    <div class="mb-3">
+
+                        <label for="numeroInforme" class="form-label">
+                            Número de informe
+                        </label>
+
+                        <input type="text" id="numeroInforme" name="numeroInforme" class="form-control"
+                            placeholder="Ingrese el número de informe">
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            ¿Existe un informe anterior?
+                        </label>
+
+                        <div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="informeAnterior" id="informeSi"
+                                    value="si">
+
+                                <label class="form-check-label" for="informeSi">
+                                    Sí
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="informeAnterior" id="informeNo"
+                                    value="no" checked>
+
+                                <label class="form-check-label" for="informeNo">
+                                    No
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATOS DEL INFORME ANTERIOR -->
+
+                    <div id="datosInformeAnterior" style="display: none;">
+
+                        <div class="row">
+
+                            <div class="col-md-4 mb-3">
+
+                                <label for="organismoAnterior" class="form-label">
+                                    Organismo de inspección
+                                </label>
+
+                                <input type="text" id="organismoAnterior" name="organismoAnterior" class="form-control">
+
+                            </div>
+
+
+                            <div class="col-md-4 mb-3">
+
+                                <label for="numeroInformeAnterior" class="form-label">
+                                    Número de informe anterior
+                                </label>
+
+                                <input type="text" id="numeroInformeAnterior" name="numeroInformeAnterior"
+                                    class="form-control">
+
+                            </div>
+
+
+                            <div class="col-md-4 mb-3">
+
+                                <label for="fechaInformeAnterior" class="form-label">
+                                    Fecha del informe
+                                </label>
+
+                                <input type="date" id="fechaInformeAnterior" name="fechaInformeAnterior"
+                                    class="form-control">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOLICITUD DEL USUARIO -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">4. Solicitud del usuario</h3>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            ¿La inspección fue solicitada por el usuario?
+                        </label>
+
+                        <div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="solicitudUsuario" id="solicitudSi"
+                                    value="si">
+
+                                <label class="form-check-label" for="solicitudSi">
+                                    Sí
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="solicitudUsuario" id="solicitudNo"
+                                    value="no" checked>
+
+                                <label class="form-check-label" for="solicitudNo">
+                                    No
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="datosSolicitante" style="display: none;">
+
+                        <label for="solicitadoPor" class="form-label">
+                            ¿Quién solicita la inspección?
+                        </label>
+
+                        <input type="text" id="solicitadoPor" name="solicitadoPor" class="form-control"
+                            placeholder="Nombre del usuario">
+
+                    </div>
+
+                </div>
+
+                <!-- DATOS DE LA INSTALACIÓN -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">5. Datos de la instalación</h3>
+
+                    <div class="row">
+
+                        <!-- Nombre del usuario -->
+                        <div class="col-md-6 mb-3">
+                            <label for="nombreUsuario" class="form-label">
+                                Nombre del usuario
+                            </label>
+
+                            <input type="text" id="nombreUsuario" name="nombreUsuario" class="form-control"
+                                placeholder="Nombre completo">
+                        </div>
+
+                        <!-- seleccion Distribuidor -->
+
+
+
+                        <div class="mb-3">
+
+                            <label for="selcciondistribuidora" class="form-label">
+                                Distribuidora
+                            </label>
+
+                            <select id="selcciondistribuidora" name="selcciondistribuidora" class="form-select"
+                                required>
+
+                                <option value="">
+                                    Seleccione una opción
+                                </option>
+
+                                <option value="periodica">
+                                    Metrogas
+                                </option>
+
+                                <option value="previa">
+                                    Vanti
+                                </option>
+
+
+                            </select>
+
+                        </div>
+
+
+
+
+                        <!-- Número de cuenta -->
+                        <div class="col-md-6 mb-3">
+                            <label for="numeroCuenta" class="form-label">
+                                Número de cuenta o contrato
+                            </label>
+
+                            <input type="text" id="numeroCuenta" name="numeroCuenta" class="form-control"
+                                placeholder="Número de cuenta o contrato">
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="col-md-8 mb-3">
+                            <label for="direccion" class="form-label">
+                                Dirección de la instalación
+                            </label>
+
+                            <input type="text" id="direccion" name="direccion" class="form-control"
+                                placeholder="Dirección">
+                        </div>
+
+                        <!-- Barrio -->
+                        <div class="col-md-4 mb-3">
+                            <label for="barrio" class="form-label">
+                                Barrio
+                            </label>
+
+                            <input type="text" id="barrio" name="barrio" class="form-control" placeholder="Barrio">
+                        </div>
+
+                        <!-- Municipio -->
+                        <div class="col-md-6 mb-3">
+                            <label for="municipio" class="form-label">
+                                Municipio
+                            </label>
+
+                            <input type="text" id="municipio" name="municipio" class="form-control"
+                                placeholder="Municipio">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono" class="form-label">
+                                Teléfono
+                            </label>
+
+                            <input type="tel" id="telefono" name="telefono" class="form-control"
+                                placeholder="Número de teléfono">
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="col-md-6 mb-3">
+                            <label for="correo" class="form-label">
+                                Correo electrónico
+                            </label>
+
+                            <input type="email" id="correo" name="correo" class="form-control"
+                                placeholder="correo@ejemplo.com">
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- TIPO DE GAS E INSTALACIÓN -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">6. Características de la instalación</h3>
+
+                    <div class="row">
+
+                        <!-- Tipo de gas -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="tipoGas" class="form-label">
+                                Tipo de gas
+                            </label>
+
+                            <select id="tipoGas" name="tipoGas" class="form-select">
+
+                                <option value="">
+                                    Seleccione una opción
+                                </option>
+
+                                <option value="natural">
+                                    Gas Natural
+                                </option>
+
+                                <option value="glp">
+                                    GLP
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Uso -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="usoInstalacion" class="form-label">
+                                Uso de la instalación
+                            </label>
+
+                            <select id="usoInstalacion" name="usoInstalacion" class="form-select">
+
+                                <option value="">
+                                    Seleccione una opción
+                                </option>
+
+                                <option value="residencial">
+                                    Residencial
+                                </option>
+
+                                <option value="comercial">
+                                    Comercial
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Tipo de vivienda -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="tipoVivienda" class="form-label">
+                                Tipo de vivienda
+                            </label>
+
+                            <select id="tipoVivienda" name="tipoVivienda" class="form-select">
+
+                                <option value="">
+                                    Seleccione una opción
+                                </option>
+
+                                <option value="unifamiliar">
+                                    Unifamiliar
+                                </option>
+
+                                <option value="multifamiliar">
+                                    Multifamiliar
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CENTRO DE MEDICIÓN -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">7. Centro de medición</h3>
+
+                    <div class="row">
+
+                        <!-- Marca del medidor -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="marcaMedidor" class="form-label">
+                                Marca del medidor
+                            </label>
+
+                            <input type="text" id="marcaMedidor" name="marcaMedidor" class="form-control"
+                                placeholder="Marca del medidor">
+
+                        </div>
+
+
+                        <!-- Tipo de medidor -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="tipoMedidor" class="form-label">
+                                Tipo de medidor
+                            </label>
+
+                            <input type="text" id="tipoMedidor" name="tipoMedidor" class="form-control"
+                                placeholder="Tipo de medidor">
+
+                        </div>
+
+
+                        <!-- Número del medidor -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="numeroMedidor" class="form-label">
+                                Número del medidor
+                            </label>
+
+                            <input type="text" id="numeroMedidor" name="numeroMedidor" class="form-control"
+                                placeholder="Número del medidor">
+
+                        </div>
+
+
+                        <!-- Lectura -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="lecturaMedidor" class="form-label">
+                                Lectura del medidor
+                            </label>
+
+                            <input type="number" id="lecturaMedidor" name="lecturaMedidor" class="form-control"
+                                placeholder="Lectura" step="any">
+
+                        </div>
+
+
+                        <!-- Marca del regulador -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="regulador" class="form-label">
+                                Regulador
+                            </label>
+
+                            <input type="text" id="regulador" name="regulador" class="form-control"
+                                placeholder="Marca o referencia del regulador">
+
+                        </div>
+
+
+                        <!-- Sello -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="sello" class="form-label">
+                                Sello
+                            </label>
+
+                            <input type="text" id="sello" name="sello" class="form-control"
+                                placeholder="Número o identificación del sello">
+
+                        </div>
+
+
+                        <!-- Etapa -->
+                        <div class="col-md-6 mb-3">
+
+                            <label for="etapa" class="form-label">
+                                Etapa
+                            </label>
+
+                            <select id="etapa" name="etapa" class="form-select">
+
+                                <option value="">
+                                    Seleccione una opción
+                                </option>
+
+                                <option value="primera">
+                                    Primera etapa
+                                </option>
+
+                                <option value="segunda">
+                                    Segunda etapa
+                                </option>
+
+                                <option value="integrada">
+                                    Unica etapa
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- eELEMNTOS DE EMERGENCIA-->
+
+                <div class=" "></div>
+
+                <!-- LÍNEA PRINCIPAL DE GAS -->
+
+                <div class="card p-4 mb-4">
+
+                    <h3 class="mb-4">8. Línea principal de gas</h3>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            ¿Se realizó inspección de la línea principal?
+                        </label>
+
+                        <div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="inspeccionLineaPrincipal"
+                                    id="lineaSi" value="si">
+
+                                <label class="form-check-label" for="lineaSi">
+                                    Sí
+                                </label>
+
+                            </div>
+
+                            <div class="form-check form-check-inline">
+
+                                <input class="form-check-input" type="radio" name="inspeccionLineaPrincipal"
+                                    id="lineaNo" value="no" checked>
+
+                                <label class="form-check-label" for="lineaNo">
+                                    No
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <label for="observacionLinea" class="form-label">
+                                Observaciones
+                            </label>
+
+                            <input type="text" id="observacionLinea" name="observacionLinea" class="form-control"
+                                placeholder="Observaciones">
+
+                        </div>
+
+                    </div>
+                </div>
+
+                </div>
+
+                </div>
+
+                <!-- PRUEBA DE HERMETICIDAD -->
+
+<div class="card p-4 mb-4">
+
+    <h3 class="mb-4">9. Prueba de hermeticidad</h3>
+
+    <div class="row">
+
+        <!-- Lectura inicial -->
+        <div class="col-md-6 mb-3">
+
+            <label for="lecturaInicial" class="form-label">
+                Lectura inicial (litros)
+            </label>
+
+            <input
+                type="number"
+                id="lecturaInicial"
+                name="lecturaInicial"
+                class="form-control"
+                placeholder="Ingrese la lectura inicial"
+                step="any"
+            >
+
+        </div>
+
+
+        <!-- Hora inicial -->
+        <div class="col-md-6 mb-3">
+
+            <label for="horaInicial" class="form-label">
+                Hora inicial
+            </label>
+
+            <input
+                type="time"
+                id="horaInicial"
+                name="horaInicial"
+                class="form-control"
+            >
+
+        </div>
+
+
+        <!-- Lectura final -->
+        <div class="col-md-6 mb-3">
+
+            <label for="lecturaFinal" class="form-label">
+                Lectura final (litros)
+            </label>
+
+            <input
+                type="number"
+                id="lecturaFinal"
+                name="lecturaFinal"
+                class="form-control"
+                placeholder="Ingrese la lectura final"
+                step="any"
+            >
+
+        </div>
+
+
+        <!-- Hora final -->
+        <div class="col-md-6 mb-3">
+
+            <label for="horaFinal" class="form-label">
+                Hora final
+            </label>
+
+            <input
+                type="time"
+                id="horaFinal"
+                name="horaFinal"
+                class="form-control"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- FUGA -->
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            ¿Se detectó fuga?
+        </label>
+
+        <div>
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="fugaDetectada"
+                    id="fugaSi"
+                    value="si"
+                >
+
+                <label class="form-check-label" for="fugaSi">
+                    Sí
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="fugaDetectada"
+                    id="fugaNo"
+                    value="no"
+                    checked
+                >
+
+                <label class="form-check-label" for="fugaNo">
+                    No
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CUMPLIMIENTO -->
+
+    <div class="mb-3">
+
+        <label for="resultadoHermeticidad" class="form-label">
+            Resultado de la prueba
+        </label>
+
+        <select
+            id="resultadoHermeticidad"
+            name="resultadoHermeticidad"
+            class="form-select"
+        >
+
+            <option value="">
+                Seleccione una opción
+            </option>
+
+            <option value="cumple">
+                Cumple
+            </option>
+
+            <option value="no_cumple">
+                No cumple
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+<!-- VÁLVULAS DE CORTE -->
+
+<div class="card p-4 mb-4">
+
+    <h3 class="mb-4">
+        10. Existencia y operatividad de las válvulas de corte
+    </h3>
+
+
+    <!-- VÁLVULA DE ENTRADA -->
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            <strong>Crítico:</strong>
+            Inexistencia de válvula de entrada en la instalación
+        </label>
+
+        <div>
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaEntrada"
+                    id="valvulaEntradaSi"
+                    value="si"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaEntradaSi"
+                >
+                    Sí
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaEntrada"
+                    id="valvulaEntradaNo"
+                    value="no"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaEntradaNo"
+                >
+                    No
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaEntrada"
+                    id="valvulaEntradaNA"
+                    value="n/a"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaEntradaNA"
+                >
+                    N/A
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VÁLVULA DE CONTROL -->
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            <strong>Crítico:</strong>
+            Válvula de control que controla toda la instalación
+        </label>
+
+        <div>
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaControl"
+                    id="valvulaControlSi"
+                    value="si"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaControlSi"
+                >
+                    Sí
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaControl"
+                    id="valvulaControlNo"
+                    value="no"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaControlNo"
+                >
+                    No
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaControl"
+                    id="valvulaControlNA"
+                    value="n/a"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaControlNA"
+                >
+                    N/A
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CIERRE DE VÁLVULA -->
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            <strong>Crítico:</strong>
+            La instalación queda en condición de riesgo de gas
+            cuando se cierra la válvula
+        </label>
+
+        <div>
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="cierreRiesgoGas"
+                    id="cierreRiesgoGasSi"
+                    value="si"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="cierreRiesgoGasSi"
+                >
+                    Sí
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="cierreRiesgoGas"
+                    id="cierreRiesgoGasNo"
+                    value="no"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="cierreRiesgoGasNo"
+                >
+                    No
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="cierreRiesgoGas"
+                    id="cierreRiesgoGasNA"
+                    value="n/a"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="cierreRiesgoGasNA"
+                >
+                    N/A
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    
+    <!-- CIERRE DE VÁLVULA -->
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            <strong>Crítico:</strong>
+            La instalación queda en condición de riesgo de gas
+            cuando se cierra la válvula
+        </label>
+
+        <div>
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="cierreRiesgoGas"
+                    id="cierreRiesgoGasSi"
+                    value="si"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="cierreRiesgoGasSi"
+                >
+                    Sí
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="cierreRiesgoGas"
+                    id="cierreRiesgoGasNo"
+                    value="no"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="cierreRiesgoGasNo"
+                >
+                    No
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="cierreRiesgoGas"
+                    id="cierreRiesgoGasNA"
+                    value="n/a"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="cierreRiesgoGasNA"
+                >
+                    N/A
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VÁLVULA DEL ARTEFACTO -->
+
+    <div class="mb-4">
+
+        <label class="form-label">
+            <strong>No crítico:</strong>
+            Inexistencia de la válvula de actuación con el flujo
+            habitual del artefacto
+        </label>
+
+        <div>
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaArtefacto"
+                    id="valvulaArtefactoSi"
+                    value="si"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaArtefactoSi"
+                >
+                    Sí
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaArtefacto"
+                    id="valvulaArtefactoNo"
+                    value="no"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaArtefactoNo"
+                >
+                    No
+                </label>
+
+            </div>
+
+
+            <div class="form-check form-check-inline">
+
+                <input
+                    class="form-check-input"
+                    type="radio"
+                    name="valvulaArtefacto"
+                    id="valvulaArtefactoNA"
+                    value="n/a"
+                >
+
+                <label
+                    class="form-check-label"
+                    for="valvulaArtefactoNA"
+                >
+                    N/A
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+                <!-- BOTONES -->
+
+                <div class="d-flex justify-content-between mb-5">
+
+                    <a href="/portal-inspector" class="btn btn-secondary">
+                        ← Cancelar
+                    </a>
+
+                    <button type="submit" class="btn btn-primary">
+                        Continuar →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </main>
+
+        <%- include('partials/footer') %>
+
+
+            <!-- JAVASCRIPT -->
+
+            <script>
+
+                // INFORME ANTERIOR
+
+                const informeSi = document.getElementById('informeSi');
+                const informeNo = document.getElementById('informeNo');
+
+                const datosInformeAnterior =
+                    document.getElementById('datosInformeAnterior');
+
+
+                informeSi.addEventListener('change', function () {
+
+                    datosInformeAnterior.style.display = 'block';
+
+                });
+
+
+                informeNo.addEventListener('change', function () {
+
+                    datosInformeAnterior.style.display = 'none';
+
+                });
+
+
+                // SOLICITUD DEL USUARIO
+
+                const solicitudSi =
+                    document.getElementById('solicitudSi');
+
+                const solicitudNo =
+                    document.getElementById('solicitudNo');
+
+                const datosSolicitante =
+                    document.getElementById('datosSolicitante');
+
+
+                solicitudSi.addEventListener('change', function () {
+
+                    datosSolicitante.style.display = 'block';
+
+                });
+
+
+                solicitudNo.addEventListener('change', function () {
+
+                    datosSolicitante.style.display = 'none';
+
+                });
+
+            </script>
+
+</body>
+
+</html>

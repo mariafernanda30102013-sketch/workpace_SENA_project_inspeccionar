@@ -1,6 +1,6 @@
 body {
-    background-color: #fd59c7;
-    color: rgb(189, 203, 218) ;
+    background-color: #f6e210;
+    color: rgb(63, 61, 61) --color de letras de registro
 }
 
 body.login {
@@ -11,28 +11,28 @@ body.login {
 }
 
 .login-card {
-    background: white;
+    background: rgb(88, 85, 85);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0);
+    box-shadow: 0 4px 10px rgb(88, 85, 85);
     width: 320px;
     text-align: center;
 }
 
-.input-group{
+.input-group {
     margin-bottom: 20px;
     text-align: left;
 }
 
-.input-group input{
+.input-group input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #1a1918;
     border-radius: 8px;
     box-sizing: border-box;
 }
 
-.button{
+.button {
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -44,3 +44,36 @@ body.login {
     font-size: 12px;
     margin-bottom: 10px;
 }
+
+.logo-contenedor {
+    width: 180px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titulo-header {
+    flex: 1;
+    text-align: center;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    margin-right: 12px;
+}
+
+.emergency-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4d06;
+    /* color amarillo */
+    color: black;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }

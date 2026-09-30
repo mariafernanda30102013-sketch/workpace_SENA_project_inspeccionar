@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Corte de inspecciones</title>
+
+    <%- include('partials/head') %>
+</head>
+
+<body>
+
+    <%- include('partials/navegation') %>
+
+    <main class="container mt-5">
+
+        <!-- ENCABEZADO -->
+        <div class="text-center mb-4">
+
+            <h1>
+                Corte de inspecciones
+            </h1>
+
+            <p class="lead">
+                Resumen de visitas e información económica
+            </p>
+
+        </div>
+
+
+        <!-- INFORMACIÓN DEL CORTE -->
+        <div class="card p-4 mb-4">
+
+            <h3 class="mb-4">
+                Información del corte
+            </h3>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+
+                    <strong>Inspector</strong>
+
+                    <p>
+                        María Fernanda
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <strong>Fecha inicial</strong>
+
+                    <p>
+                        01/09/2026
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <strong>Fecha final</strong>
+
+                    <p>
+                        30/09/2026
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESUMEN DE VISITAS -->
+        <div class="card p-4 mb-4">
+
+            <h3 class="mb-4">
+                Resumen de visitas
+            </h3>
+
+            <div class="row text-center">
+
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        Visitas realizadas
+                    </h5>
+
+                    <h2>
+                        25
+                    </h2>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        Periódicas
+                    </h5>
+
+                    <h2>
+                        20
+                    </h2>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        Comerciales
+                    </h5>
+
+                    <h2>
+                        5
+                    </h2>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        Anuladas
+                    </h5>
+
+                    <h2>
+                        2
+                    </h2>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        Conformes
+                    </h5>
+
+                    <h2>
+                        21
+                    </h2>
+
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+
+                    <h5>
+                        No conformes
+                    </h5>
+
+                    <h2>
+                        2
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESUMEN ECONÓMICO -->
+        <div class="card p-4 mb-4">
+
+            <h3 class="mb-4">
+                Resumen económico
+            </h3>
+
+            <div class="row text-center">
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Total generado
+                    </h5>
+
+                    <h3>
+                        $575.000
+                    </h3>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Total abonado
+                    </h5>
+
+                    <h3>
+                        $500.000
+                    </h3>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <h5>
+                        Saldo pendiente
+                    </h5>
+
+                    <h3>
+                        $75.000
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- DETALLE DE INSPECCIONES -->
+        <div class="card p-4 mb-5">
+
+            <h3 class="mb-4">
+                Detalle de inspecciones
+            </h3>
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Informe
+                            </th>
+
+                            <th>
+                                Cliente
+                            </th>
+
+                            <th>
+                                Tipo
+                            </th>
+
+                            <th>
+                                Valor
+                            </th>
+
+                            <th>
+                                Abono
+                            </th>
+
+                            <th>
+                                Saldo
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                INF-001
+                            </td>
+
+                            <td>
+                                Juan Pérez
+                            </td>
+
+                            <td>
+                                Periódica
+                            </td>
+
+                            <td>
+                                $25.000
+                            </td>
+
+                            <td>
+                                $25.000
+                            </td>
+
+                            <td>
+                                $0
+                            </td>
+
+                            <td>
+                                Conforme
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                INF-002
+                            </td>
+
+                            <td>
+                                Ana Gómez
+                            </td>
+
+                            <td>
+                                Comercial
+                            </td>
+
+                            <td>
+                                $30.000
+                            </td>
+
+                            <td>
+                                $20.000
+                            </td>
+
+                            <td>
+                                $10.000
+                            </td>
+
+                            <td>
+                                Conforme
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                INF-003
+                            </td>
+
+                            <td>
+                                Carlos Ruiz
+                            </td>
+
+                            <td>
+                                Periódica
+                            </td>
+
+                            <td>
+                                $25.000
+                            </td>
+
+                            <td>
+                                $0
+                            </td>
+
+                            <td>
+                                $25.000
+                            </td>
+
+                            <td>
+                                No conforme
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                INF-004
+                            </td>
+
+                            <td>
+                                Laura Díaz
+                            </td>
+
+                            <td>
+                                Periódica
+                            </td>
+
+                            <td>
+                                $25.000
+                            </td>
+
+                            <td>
+                                $25.000
+                            </td>
+
+                            <td>
+                                $0
+                            </td>
+
+                            <td>
+                                Anulada
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTONES -->
+        <div class="text-center mb-5">
+
+            <button
+                type="button"
+                class="btn btn-primary me-2"
+                onclick="window.print()"
+            >
+                Imprimir corte
+            </button>
+
+            <a
+                href="/consulta-inspecciones"
+                class="btn btn-secondary"
+            >
+                Volver a consultas
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <%- include('partials/footer') %>
+
+</body>
+
+</html>

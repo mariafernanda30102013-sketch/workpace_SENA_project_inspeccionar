@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import { usuarios } from '../usuarios.js';
+
 const router = Router();
 
 // Ruta POST para procesar el login
@@ -9,7 +11,7 @@ router.post('/api/login', (req, res) => {
     console.log("Contraseña recibida:", contrasena);
 
     if (usuario === "admin" && contrasena === "12345") {
-        res.redirect('/about'); 
+        res.redirect('/about');
     } else {
         res.send("Usuario o contraseña incorrectos");
     }
@@ -17,8 +19,30 @@ router.post('/api/login', (req, res) => {
 
 // 3. Botón "Crear Usuario"
 router.get('/registro', (req, res) => {
-    res.send("Aquí se mostrará el formulario para crear un nuevo usuario.");
+    res.render('registro', {
+        title_menu: 'registro de usuario'
+    });
 });
+
+// Recibir los datos del formulario de registro 
+router.post('/registro', (req, res) => {
+
+    console.log("========== REGISTRO ==========");
+    console.log(req.body);
+    console.log("==============================");
+
+    usuarios.push(req.body);
+
+    console.log("Usuarios registrados:");
+    console.log(usuarios);
+
+    res.render('registro', {
+        title_menu: 'registro de usuario',
+        registroExitoso: true
+    });
+
+});
+
 
 // 4. Enlace "Restablecer contraseña"
 router.get('/recuperar-password', (req, res) => {

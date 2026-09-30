@@ -23,7 +23,7 @@ app.use(express.static(join(__dirname, 'public')))
 
 // 3. TERCERO: Usar las rutas de la aplicación
 app.use(indexRoutes)
-app.use(authRoutes)
+app.use('/autenticacion', authRoutes)
 
 // 4. CUARTO: Iniciar el servidor
 app.listen(3000)

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal Inspector</title>
+
+    <%- include('partials/head') %>
+</head>
+
+<body>
+
+    <%- include('partials/navegation') %>
+
+        <main class="container mt-5">
+
+            <div class="text-center">
+
+                <h1>Portal del Inspector</h1>
+
+                <p class="lead">
+                    Bienvenido al sistema de inspecciones.
+                </p>
+
+                <hr>
+
+                <div class="mt-4">
+
+                    <a href="/registrar-inspeccion" class="btn btn-primary">
+                        Registrar inspección
+                    </a>
+
+                    <a href="/consulta-inspecciones" class="btn btn-primary">
+                        Consultar inspecciones
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <%- include('partials/footer') %>
+
+</body>
+
+</html>

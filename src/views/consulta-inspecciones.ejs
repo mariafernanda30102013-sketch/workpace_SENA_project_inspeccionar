@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consulta de inspecciones</title>
+
+    <%- include('partials/head') %>
+
+</head>
+
+
+<body>
+
+    <%- include('partials/navegation') %>
+
+
+        <main class="container mt-5">
+
+            <!-- TÍTULO -->
+
+            <div class="text-center mb-4">
+
+                <h1>
+                    Consulta de inspecciones
+                </h1>
+
+                <p class="lead">
+                    Control de visitas y cortes de inspección
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="card p-4 mb-4">
+
+                <h3 class="mb-4">
+                    Filtros de consulta
+                </h3>
+
+
+                <div class="row">
+
+                    <!-- INSPECTOR -->
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="inspector" class="form-label">
+                            Inspector
+                        </label>
+
+                        <select id="inspector" class="form-select">
+
+                            <option value="">
+                                Seleccione un inspector
+                            </option>
+
+                            <option value="inspector1">
+                                Inspector 1
+                            </option>
+
+                            <option value="inspector2">
+                                Inspector 2
+                            </option>
+
+                            <option value="inspector3">
+                                Inspector 3
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FECHA INICIAL -->
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="fechaInicio" class="form-label">
+                            Fecha inicial
+                        </label>
+
+                        <input type="date" id="fechaInicio" class="form-control">
+
+                    </div>
+
+
+                    <!-- FECHA FINAL -->
+
+                    <div class="col-md-4 mb-3">
+
+                        <label for="fechaFinal" class="form-label">
+                            Fecha final
+                        </label>
+
+                        <input type="date" id="fechaFinal" class="form-control">
+
+                    </div>
+
+                </div>
+
+
+                <div class="text-end">
+
+                    <button type="button" class="btn btn-primary">
+                        Consultar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESUMEN DE VISITAS -->
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card p-4 text-center">
+
+                        <h5>
+                            Visitas realizadas
+                        </h5>
+
+                        <h2>
+                            25
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card p-4 text-center">
+
+                        <h5>
+                            Periódicas
+                        </h5>
+
+                        <h2>
+                            20
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card p-4 text-center">
+
+                        <h5>
+                            Comerciales
+                        </h5>
+
+                        <h2>
+                            5
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESTADO DE LAS VISITAS -->
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card p-4 text-center">
+
+                        <h5>
+                            Visitas anuladas
+                        </h5>
+
+                        <h2>
+                            2
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card p-4 text-center">
+
+                        <h5>
+                            Visitas conformes
+                        </h5>
+
+                        <h2>
+                            21
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+
+                    <div class="card p-4 text-center">
+
+                        <h5>
+                            Visitas no conformes
+                        </h5>
+
+                        <h2>
+                            2
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESUMEN ECONÓMICO -->
+
+            <div class="card p-4 mb-4">
+
+                <h3 class="mb-4">
+                    Resumen económico
+                </h3>
+
+
+                <div class="row text-center">
+
+                    <div class="col-md-4">
+
+                        <h5>
+                            Total generado
+                        </h5>
+
+                        <h3>
+                            $750.000
+                        </h3>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <h5>
+                            Total abonado
+                        </h5>
+
+                        <h3>
+                            $500.000
+                        </h3>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <h5>
+                            Saldo pendiente
+                        </h5>
+
+                        <h3>
+                            $250
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLA DE INSPECCIONES -->
+
+            <div class="card p-4 mb-5">
+
+                <h3 class="mb-4">
+                    Detalle de inspecciones
+                </h3>
+
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Informe
+                                </th>
+
+                                <th>
+                                    Cliente
+                                </th>
+
+                                <th>
+                                    Tipo
+                                </th>
+
+                                <th>
+                                    Valor
+                                </th>
+
+                                <th>
+                                    Abono
+                                </th>
+
+                                <th>
+                                    Saldo
+                                </th>
+
+                                <th>
+                                    Estado
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>INF-001</td>
+                                <td>Juan Pérez</td>
+                                <td>Periódica</td>
+                                <td>$25.000</td>
+                                <td>$25.000</td>
+                                <td>$0</td>
+                                <td>Conforme</td>
+                            </tr>
+
+                            <tr>
+                                <td>INF-002</td>
+                                <td>Ana Gómez</td>
+                                <td>Comercial</td>
+                                <td>$30.000</td>
+                                <td>$20.000</td>
+                                <td>$10.000</td>
+                                <td>Conforme</td>
+                            </tr>
+
+                            <tr>
+                                <td>INF-003</td>
+                                <td>Carlos Ruiz</td>
+                                <td>Periódica</td>
+                                <td>$25.000</td>
+                                <td>$0</td>
+                                <td>$25.000</td>
+                                <td>No conforme</td>
+                            </tr>
+
+                            <tr>
+                                <td>INF-004</td>
+                                <td>Laura Díaz</td>
+                                <td>Periódica</td>
+                                <td>$25.000</td>
+                                <td>$25.000</td>
+                                <td>$0</td>
+                                <td>Anulada</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        
+
+
+        <%- include('partials/footer') %>
+
+
+            <!-- BOTÓN GENERAR CORTE -->
+            <div class="text-center mb-5">
+
+                <a href="/corte-inspecciones" class="btn btn-success">
+                    Generar corte
+                </a>
+
+            </div>
+
+            </main>
+
+</body>
+
+</html>
