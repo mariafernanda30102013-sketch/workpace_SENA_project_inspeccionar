@@ -6,7 +6,8 @@ const hora = new Date().toLocaleTimeString('es-CO')
 
 router.get('/', (req, res) => res.render('index', { etiqueta: 'Mi primer Sitio Web with Node',  hora:hora }))
 
-router.get('/sobre_nosotros', (req, res) => res.render('sobre_nosotros.ejs', { etiqueta: 'Sobre Nosotros' }))
+router.get('/sobre_nosotros', (req, res) => 
+    res.render('sobre_nosotros.ejs', { etiqueta: 'Sobre Nosotros' }))
 router.get('/menu', (req, res ) => res.render('menu.ejs', { etiqueta: 'Menu Empresarial' }))
 
 router.get('/contactos', (req, res ) => res.render('contactos.ejs', { etiqueta: 'Pagina de Contactos' }))
