@@ -1,52 +1,409 @@
 <!DOCTYPE html>
-<html lang='en'>
+
+<html lang="es">
 
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>
-        <%= etiqueta %>
-    </title>
-    <%- include('partials/head') %>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+    <%= etiqueta %>
+</title>
+
+<%- include('partials/head') %>
+```
+
 </head>
 
 <body>
 
-    <%- include('partials/navegation') %>
+```
+<!-- ENCABEZADO -->
+<%- include('partials/navegation') %>
 
-        <!--En caso que el codigo este desordenado usamos la tecla Shit+alt+f y nos formatea codigo-->
 
-        <main class="vh-100 container pt-2 text-justify-content d-flex justify-content-center align-items-center" style="text-align: justify">
-            <section>
-                <h1 class="display-1">Sobre_nosotros</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam culpa ex accusantium amet laborum
-                    adipisci alias, aut debitis voluptate minus animi perferendis provident et ullam nisi dolorum
-                    eveniet libero ea aliquam beatae omnis repudiandae cum. Impedit vero dolore iste porro numquam
-                    suscipit exercitationem pariatur magni optio quaerat alias fugit, deserunt similique commodi
-                    cupiditate eius beatae odio? Qui culpa doloribus obcaecati aliquam nam non nobis debitis maiores
-                    suscipit delectus error corrupti sint dolores, accusantium quisquam beatae, ad quos. Autem, odit
-                    saepe? Repudiandae ut, similique accusamus ad at harum architecto sapiente molestias consequatur,
-                    magnam, fugit debitis amet. Reiciendis unde dolorum alias rerum accusamus consectetur nobis, modi
-                    numquam quod, hic facilis quisquam dolorem. Obcaecati consectetur eos cum ea illum quidem,
-                    recusandae deserunt nam quia! Voluptatibus veniam minima voluptate error asperiores fugit omnis quia
-                    et non, vero hic culpa assumenda adipisci tenetur possimus nisi incidunt tempore aperiam dignissimos
-                    qui aliquam? Adipisci nemo quae aliquam at animi dolor, maiores tempore officia cum quas eius harum
-                    id porro voluptas deleniti veniam hic labore expedita eaque rerum consectetur molestias? Libero
-                    recusandae ipsam, quisquam eum mollitia ex nemo veritatis nulla autem aspernatur sunt vero
-                    perferendis, adipisci saepe sint reprehenderit aliquid cumque aut? Ex, voluptate, iste ea maxime
-                    nemo dicta, laudantium modi expedita doloribus porro consequatur dolore cumque? Provident assumenda,
-                    repellendus sapiente nesciunt totam veritatis officia consequuntur, sit, tempora temporibus nam
-                    vero. Culpa beatae excepturi quisquam neque nihil ipsam quam provident, fugit deserunt optio atque
-                    saepe eaque maxime? Itaque explicabo ipsam architecto inventore consectetur praesentium quis ea
-                    voluptatum dignissimos, ipsa asperiores eligendi ad. Corporis autem voluptatum fugit illo, officia
-                    distinctio modi deserunt libero, doloribus, dolorum labore quibusdam minus ex ducimus. Rem pariatur
-                    delectus, debitis officia magni fugit laboriosam eligendi reprehenderit dolores autem facilis, et
-                    aliquid at doloremque officiis optio necessitatibus non nam atque eius deserunt? Cum aliquam eaque
-                    officia?</p>
-            </section>
-        </main>
+<!-- CONTENIDO PRINCIPAL -->
+<main class="sobre-nosotros">
 
-        <%- include('partials/footer') %>
+    <!-- PRESENTACIÓN -->
+    <section class="sobre-hero">
+
+        <div class="sobre-contenido">
+
+            <h1>Sobre J&M Inspección y Certificación</h1>
+
+            <p>
+                Somos un organismo dedicado a la inspección y evaluación
+                de instalaciones para el suministro de gas combustible,
+                comprometido con la seguridad de los hogares y
+                establecimientos comerciales.
+            </p>
+
+            <p>
+                Nuestro trabajo está orientado a verificar que las
+                instalaciones inspeccionadas cumplan con las condiciones
+                técnicas y de seguridad establecidas para su adecuado
+                funcionamiento.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIÉNES SOMOS -->
+    <section class="seccion-info">
+
+        <h2>¿Quiénes somos?</h2>
+
+        <p>
+            J&M Inspección y Certificación S.A.S. es una organización
+            especializada en la realización de inspecciones de
+            instalaciones de gas combustible.
+
+            Contamos con personal técnico capacitado para realizar
+            visitas de inspección, recopilar información, verificar
+            las condiciones de las instalaciones y elaborar los
+            respectivos informes.
+        </p>
+
+        <p>
+            Nuestro propósito es brindar un servicio organizado,
+            transparente y orientado a la prevención de riesgos,
+            contribuyendo a que los usuarios conozcan las condiciones
+            de seguridad de sus instalaciones.
+        </p>
+
+    </section>
+
+
+    <!-- MISIÓN Y VISIÓN -->
+    <section class="mision-vision">
+
+        <div class="info-card">
+
+            <h2>Misión</h2>
+
+            <p>
+                Realizar servicios de inspección de instalaciones de
+                gas combustible de manera organizada, técnica y
+                responsable, proporcionando información clara sobre
+                las condiciones encontradas durante cada visita.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h2>Visión</h2>
+
+            <p>
+                Ser una organización reconocida por la calidad de sus
+                procesos de inspección, la atención a sus usuarios y
+                el compromiso permanente con la seguridad de las
+                instalaciones de gas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section class="seccion-info">
+
+        <h2>Nuestros servicios</h2>
+
+        <div class="servicios-nosotros">
+
+            <div class="servicio-card">
+
+                <h3>Inspección periódica</h3>
+
+                <p>
+                    Verificación de las condiciones técnicas y de
+                    seguridad de instalaciones que se encuentran
+                    actualmente en funcionamiento.
+                </p>
+
+            </div>
+
+
+            <div class="servicio-card">
+
+                <h3>Instalaciones nuevas</h3>
+
+                <p>
+                    Inspección de instalaciones nuevas antes de su
+                    puesta en servicio, verificando los elementos
+                    correspondientes al sistema de suministro de gas.
+                </p>
+
+            </div>
+
+
+            <div class="servicio-card">
+
+                <h3>Reformas</h3>
+
+                <p>
+                    Evaluación de instalaciones que han presentado
+                    modificaciones, ampliaciones o cambios en sus
+                    componentes.
+                </p>
+
+            </div>
+
+
+            <div class="servicio-card">
+
+                <h3>Solicitud del usuario</h3>
+
+                <p>
+                    Atención de solicitudes de inspección realizadas
+                    por los usuarios que requieren conocer las
+                    condiciones de su instalación.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ALCANCE -->
+    <section class="alcance">
+
+        <h2>Alcance de nuestros servicios</h2>
+
+        <p>
+            Los servicios de J&M están orientados a la inspección de
+            instalaciones destinadas al suministro y utilización de
+            gas combustible en diferentes tipos de establecimientos.
+        </p>
+
+        <div class="alcance-lista">
+
+            <div>
+                <strong>Instalaciones residenciales</strong>
+                <p>
+                    Viviendas unifamiliares, apartamentos y conjuntos
+                    residenciales.
+                </p>
+            </div>
+
+            <div>
+                <strong>Instalaciones comerciales</strong>
+                <p>
+                    Restaurantes, hoteles, oficinas, locales
+                    comerciales y establecimientos de atención al
+                    público.
+                </p>
+            </div>
+
+            <div>
+                <strong>Instalaciones de uso especial</strong>
+                <p>
+                    Establecimientos que utilizan equipos a gas para
+                    actividades específicas y que requieren una
+                    verificación de sus condiciones de seguridad.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TIPOS DE INSTALACIONES -->
+    <section class="seccion-info">
+
+        <h2>Tipos de instalaciones</h2>
+
+        <div class="tipos-instalaciones">
+
+            <span>Viviendas</span>
+
+            <span>Apartamentos</span>
+
+            <span>Conjuntos residenciales</span>
+
+            <span>Restaurantes</span>
+
+            <span>Hoteles</span>
+
+            <span>Oficinas</span>
+
+            <span>Locales comerciales</span>
+
+            <span>Establecimientos de servicios</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROCESO -->
+    <section class="proceso">
+
+        <h2>¿Cómo realizamos una inspección?</h2>
+
+        <div class="pasos">
+
+            <div class="paso">
+
+                <span>1</span>
+
+                <h3>Solicitud</h3>
+
+                <p>
+                    Se registra la solicitud y se programan los datos
+                    de la visita.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <span>2</span>
+
+                <h3>Visita</h3>
+
+                <p>
+                    Un inspector realiza la visita y recopila la
+                    información necesaria de la instalación.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <span>3</span>
+
+                <h3>Inspección</h3>
+
+                <p>
+                    Se verifican las condiciones técnicas y de
+                    seguridad de los diferentes componentes.
+                </p>
+
+            </div>
+
+
+            <div class="paso">
+
+                <span>4</span>
+
+                <h3>Informe</h3>
+
+                <p>
+                    Se registran los resultados obtenidos y se genera
+                    el informe correspondiente.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPROMISO -->
+    <section class="compromiso">
+
+        <h2>Nuestro compromiso</h2>
+
+        <p>
+            En J&M Inspección y Certificación trabajamos bajo
+            principios de responsabilidad, imparcialidad,
+            confidencialidad y transparencia.
+        </p>
+
+        <p>
+            Buscamos que cada inspección proporcione información clara
+            y útil para los usuarios, contribuyendo a la identificación
+            oportuna de condiciones que puedan representar riesgos
+            en las instalaciones de gas.
+        </p>
+
+    </section>
+
+
+    <!-- VALORES -->
+    <section class="seccion-info">
+
+        <h2>Nuestros valores</h2>
+
+        <div class="valores">
+
+            <div>
+                <h3>Responsabilidad</h3>
+                <p>
+                    Realizamos nuestro trabajo con compromiso y
+                    atención a cada detalle.
+                </p>
+            </div>
+
+            <div>
+                <h3>Imparcialidad</h3>
+                <p>
+                    Procuramos que los resultados de las inspecciones
+                    sean objetivos y basados en las condiciones
+                    encontradas.
+                </p>
+            </div>
+
+            <div>
+                <h3>Transparencia</h3>
+                <p>
+                    Brindamos información clara durante las diferentes
+                    etapas del proceso.
+                </p>
+            </div>
+
+            <div>
+                <h3>Seguridad</h3>
+                <p>
+                    Promovemos la identificación y prevención de
+                    condiciones que puedan afectar a los usuarios.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CIERRE -->
+    <section class="sobre-final">
+
+        <h2>Seguridad y confianza en cada inspección</h2>
+
+        <p>
+            J&M Inspección y Certificación trabaja para ofrecer a sus
+            usuarios un proceso de inspección organizado, claro y
+            responsable.
+        </p>
+
+        <a href="/contactos" class="btn-sobre">
+            Contáctanos
+        </a>
+
+    </section>
+
+</main>
+
+
+<%- include('partials/footer') %>
+```
+
 </body>
 
 </html>

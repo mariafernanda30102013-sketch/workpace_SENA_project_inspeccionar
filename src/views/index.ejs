@@ -1,29 +1,65 @@
+```html
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="es">
 
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>
-        <%= etiqueta %>
-    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= etiqueta %></title>
+
     <%- include('partials/head') %>
 </head>
 
 <body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
     <%- include('partials/navegation') %>
 
-        <main class="container vh-100 d-flex flex-column justify-content-center align-items-center">
 
-            <div class="card bg-white text-dark text-center">
-                <main class="container mt-5">
-                    <h1>Bienvenidos al Menu Principal</h1>
-                    <p> Has iniciado sesion correctamente</p>
-                    <a href="/login" class="btn btn-danger">Cerrar session</a>
-                </main>
+    <!-- PRESENTACIÓN PRINCIPAL -->
+    <main class="inicio">
+
+        <section class="inicio-principal">
+
+            <div class="inicio-centro">
+
+                <!-- LOGO CENTRAL -->
+                <img
+                    src="/img/jym.png"
+                    alt="J&M Inspección y Certificación"
+                    class="inicio-logo"
+                >
+
+                <!-- NOMBRE DE LA EMPRESA -->
+                <h1>
+                    J&M INSPECCIÓN Y CERTIFICACIÓN
+                </h1>
+
+                <!-- TEXTO -->
+                <p class="inicio-subtitulo">
+                    Seguridad y confianza en cada inspección
+                </p>
+
+                <!-- BOTÓN -->
+                <a
+                    href="/autenticacion/login"
+                    class="btn-inicio-sesion"
+                >
+                    Iniciar sesión
+                </a>
+
             </div>
-        </main>
-        <%- include('partials/footer') %>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <%- include('partials/footer') %>
+
 </body>
 
 </html>
+```

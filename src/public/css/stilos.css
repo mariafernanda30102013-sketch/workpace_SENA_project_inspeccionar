@@ -76,4 +76,121 @@ body.login {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  }
+}
+
+
+/* BOTÓN INICIAR SESIÓN */
+
+.btn-inicio-sesion {
+    display: inline-block;
+    padding: 14px 38px;
+    background-color: #c62828;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid #c62828;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.btn-inicio-sesion:hover {
+    background-color: #a91f1f;
+    border-color: #a91f1f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================
+   PÁGINA DE INICIO
+========================================= */
+
+.inicio {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.inicio-principal {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.inicio-centro {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* LOGO CENTRAL */
+
+.inicio-logo {
+    display: block;
+    width: 190px;
+    height: auto;
+    margin: 0 auto 25px auto;
+}
+
+
+/* NOMBRE DE LA EMPRESA */
+
+.inicio-centro h1 {
+    width: 100%;
+    margin: 0 0 15px 0;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+
+/* FRASE */
+
+.inicio-subtitulo {
+    width: 100%;
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* BOTÓN INICIAR SESIÓN */
+
+.btn-inicio-sesion {
+    display: inline-block;
+    padding: 14px 38px;
+    background-color: #c62828;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid #c62828;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+
+/* EFECTO DEL BOTÓN */
+
+.btn-inicio-sesion:hover {
+    background-color: #a91f1f;
+    border-color: #a91f1f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.20);
+}
