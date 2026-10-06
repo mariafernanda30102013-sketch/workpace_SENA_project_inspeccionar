@@ -13,53 +13,116 @@
 
 <body>
     <%- include('partials/navegation') %>
+      
+        <!-- Formulario de contacto -->
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
 
-        <!--Creacion de formulario-->
+                    <div class="card shadow-lg border-0">
 
-        <div class="container vh-100 d-flex justify-content-center align-items-center">
-            <!--crea una tarjeta de boostraps para contener el formulario b-dark es para que el fondo del formulario sea de color oscuro-->
-            <div class="card bg-dark text-white text-center">
+                        <!-- Encabezado -->
+                        <div class="card-header text-center py-4">
+                            <h2 class="mb-2">Contáctanos</h2>
+                            <p class="mb-0">
+                                Estamos aquí para ayudarte
+                            </p>
+                        </div>
 
-                <div class="card-header">
-                    <!--se crea la cabecera de la tarjeta-->
-                    <h3 class="justify-content align-items-center">Escribenos</h3>
-                    <div class="card-body text-star">
-                        <form>
-                            <div class="mb-3">
-                                <label for="Nombre"> Nombre "Requerido"</label>
-                                <input type="text" placeholder="Nombre Completo" class="form-control">
-                            </div>
+                        <!-- Cuerpo del formulario -->
+                        <div class="card-body p-4">
 
-                            <div class="mb-3">
-                                <label for="Nombre">correo electronico "Requerido"</label>
-                                <input type="email" placeholder="correo electronico" class="form-control">
-                            </div>
+                            <form>
 
-                            <div class="mb-3">
-                                <label for="Nombre"> Asunto "Requerido"</label>
-                                <input type="text" placeholder="Asunto" class="form-control">
-                            </div>
+                                <!-- Nombre -->
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">
+                                        Nombre completo
+                                    </label>
 
-                            <div class="mb-3">
-                                <label for="Nombre"> Mensaje "Requerido"</label>
-                                <textarea name="mensaje" rows="3" class="form-control"
-                                    placeholder="Por favor escriba su mensaje">
+                                    <input type="text" id="nombre" name="nombre" class="form-control"
+                                        placeholder="Ingrese su nombre completo" required>
+                                </div>
 
-                                </textarea>
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">
+                                        Teléfono
+                                    </label>
 
-                            </div>
+                                    <input type="tel" id="telefono" name="telefono" class="form-control"
+                                        placeholder="Ingrese su número de teléfono" required>
+                                </div>
 
-                            <button type="submit">
-                                Enviar
-                            </button>
+                                <!-- Correo -->
+                                <div class="mb-3">
+                                    <label for="correo" class="form-label">
+                                        Correo electrónico
+                                    </label>
 
-                            <button type="reset">
-                                Limpiar
-                            </button>
+                                    <input type="email" id="correo" name="correo" class="form-control"
+                                        placeholder="ejemplo@correo.com" required>
+                                </div>
 
+                                <!-- Tipo de consulta -->
+                                <div class="mb-3">
+                                    <label for="servicio" class="form-label">
+                                        Tipo de consulta
+                                    </label>
 
-                        </form>
+                                    <select id="servicio" name="servicio" class="form-select" required>
+                                        <option value="" selected disabled>
+                                            Seleccione una opción
+                                        </option>
 
+                                        <option value="inspeccion">
+                                            Inspección de gas
+                                        </option>
+
+                                        <option value="certificacion">
+                                            Certificación
+                                        </option>
+
+                                        <option value="visita">
+                                            Solicitar una visita
+                                        </option>
+
+                                        <option value="informacion">
+                                            Solicitar información
+                                        </option>
+
+                                        <option value="otro">
+                                            Otro
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <!-- Mensaje -->
+                                <div class="mb-4">
+                                    <label for="mensaje" class="form-label">
+                                        Mensaje
+                                    </label>
+
+                                    <textarea id="mensaje" name="mensaje" rows="5" class="form-control"
+                                        placeholder="Escriba aquí su mensaje..." required></textarea>
+                                </div>
+
+                                <!-- Botones -->
+                                <div class="d-flex justify-content-center gap-2">
+
+                                    <button type="submit" class="btn btn-danger px-4">
+                                        Enviar mensaje
+                                    </button>
+
+                                    <button type="reset" class="btn btn-secondary px-4">
+                                        Limpiar
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </div>
                     </div>
 
                 </div>
@@ -67,7 +130,14 @@
         </div>
 
 
-<%- include('partials/footer') %>
+        </div>
+
+        </div>
+        </div>
+        </div>
+
+
+        <%- include('partials/footer') %>
 </body>
 
 </html>
